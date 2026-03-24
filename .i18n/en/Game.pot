@@ -1,80 +1,853 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23\n"
+"POT-Creation-Date: 2026-03-23\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit"
 
-#: GameServer.RpcHandlers
-msgid "level completed with warnings… 🎭"
-msgstr ""
-
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "Hello World"
-msgstr ""
-
 #: Game
-msgid "This text appears on the starting page where one selects the world/level to play.\n"
-"You can use **markdown**."
+msgid "Orderings & Lattices Game"
 msgstr ""
 
-#: GameServer.RpcHandlers
-msgid "level completed! 🎉"
+#. §0: `a ⊔ (b ⊓ c) ≤ a ⊔ b`
+#. §1: `apply sup_le`
+#: Game.Levels.LatticeWorld.Level04
+msgid "Goal 1: §0. The left side is a supremum. Use §1."
 msgstr ""
 
-#: Game
-msgid "Hello World Game"
-msgstr ""
-
-#. §0: `«{g}»`
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You should use §0 now."
+#. §0: `⊓`
+#. §1: `inf_le_left`
+#. §2: `a ⊓ b ≤ a`
+#. §3: `a`
+#. §4: `inf_le_right`
+#. §5: `a ⊓ b ≤ b`
+#. §6: `b`
+#. §7: `le_inf`
+#. §8: `a ≤ b`
+#. §9: `a ≤ c`
+#. §10: `a ≤ b ⊓ c`
+#. §11: $b \\le c$
+#. §12: $a$
+#: Game.Levels.LatticeWorld.Level02
+msgid "Every pair of elements in a lattice also has a **Greatest Lower Bound** or **Infimum**, denoted by §0.\n"
+"\n"
+"Here is the API for the Infimum:\n"
+"* §1: §2 (It is a lower bound for §3)\n"
+"* §4: §5 (It is a lower bound for §6)\n"
+"* §7: If §8 and §9, then §10 (It is the *greatest* lower bound)\n"
+"\n"
+"Let's prove that the infimum is monotonic: if §11, then picking the infimum with §12 preserves the inequality."
 msgstr ""
 
 #: GameServer.RpcHandlers
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
-#: Game
-msgid "You should use this game as a template for your own game and add your own levels."
+#: Game.Levels.LatticeWorld
+msgid "Having mastered Partial Orders, we now add more structure.\n"
+"Welcome to the Lattice World, where every pair of elements has a least upper bound and a greatest lower bound."
 msgstr ""
 
-#: Game
-msgid "Here you can put additional information about the game. It is accessible\n"
-"from the starting through the drop-down menu.\n"
+#. §0: `le_trans`
+#. §1: `trans`
+#. §2: `a, b, c, d`
+#. §3: `X`
+#. §4: `trans`
+#: Game.Levels.PosetWorld.Level02
+msgid "You can prove transitivity directly using the axiom §0,\n"
+"but Mathlib provides a very powerful tactic called §1\n"
+"that makes chaining inequalities much more intuitive.\n"
 "\n"
-"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
+"Let §2 be arbitrary elements of our partial order §3.\n"
+"Suppose you have a chain of inequalities.\n"
+"Let's see how §4 helps you break the problem down into manageable steps."
+msgstr ""
+
+#. §0: `rw [sup_comm c a]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Commute the inside to set up the next absorption. Type §0."
+msgstr ""
+
+#. §0: `⊥`
+#. §1: `exact bot_le`
+#: Game.Levels.CompleteLatticeWorld.Level01
+msgid "The property that §0 is smaller than everything is an axiom. Type §1."
+msgstr ""
+
+#. §0: $a \\le b$
+#. §1: `exact hab`
+#: Game.Levels.PosetWorld.Level03
+msgid "The first goal is §0, which you already have! Type §1."
+msgstr ""
+
+#. §0: `le_refl a`
+#. §1: `a ≤ a`
+#. §2: `a`
+#: Game.Levels.PosetWorld.Level01
+msgid "§0 is the proof that §1 for any element §2 in a partial order."
+msgstr ""
+
+#. §0: `trans`
+#. §1: `=`
+#. §2: `≤`
+#. §3: `<`
+#. §4: `a ≤ c`
+#. §5: `trans b`
+#. §6: `a ≤ b`
+#. §7: `b ≤ c`
+#: Game.Levels.PosetWorld.Level02
+msgid "The §0 tactic allows you to chain transitive relations like §1, §2, or §3.\n"
+"If your goal is §4, typing §5 will split it into two goals: §6 and §7."
+msgstr ""
+
+#. §0: `a ≤ d`
+#. §1: `c`
+#. §2: `trans c`
+#: Game.Levels.PosetWorld.Level02
+msgid "Your goal is §0. You want to step through §1 first. Type §2."
+msgstr ""
+
+#: Game.Levels.BossDistributiveWorld
+msgid "The Final Puzzle"
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed with warnings… 🎭"
+msgstr ""
+
+#. §0: `apply le_antisymm`
+#: Game.Levels.LatticeWorld.Level01
+msgid "Every Lattice is a Partial Order! To prove two things are equal, start by typing §0."
+msgstr ""
+
+#. §0: `inf_assoc`
+#. §1: `(a ⊓ b) ⊓ c = a ⊓ (b ⊓ c)`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 states that the infimum operation is associative:\n"
+"§1.\n"
+"You can shift the parentheses when taking the infimum of three or more elements."
+msgstr ""
+
+#. §0: `a ⊓ (a ⊔ b) = a`
+#. §1: `rw [inf_sup_self]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Apply the other absorption law §0. Type §1."
+msgstr ""
+
+#. §0: `∅`
+#. §1: `⊥`
+#. §2: `⊤`
+#. §3: `⊥`
+#: Game.Levels.CompleteLatticeWorld.Level01
+msgid "## Complete Lattices\n"
 "\n"
-"Use **markdown**."
+"A normal lattice has supremums for any 2 elements. A **Complete Lattice** has supremums and infimums for *every* subset, even infinite ones! (Think of the power set of a type).\n"
+"\n"
+"Because the empty set §0 also has a supremum, every complete lattice is guaranteed to have a least element, called §1 (bot), and a greatest element, called §2 (top). Let's look at §3."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This last message appears if the level is solved."
+#. §0: `intro`
+#. §1: `∀ x, P x → Q`
+#. §2: `intro x h`
+#. §3: `x`
+#. §4: `h : P x`
+#. §5: `Q`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 brings variables and hypotheses from the goal into your local context.\n"
+"If your goal is §1, typing §2 gives you §3 and a proof §4, leaving §5 as your new goal."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+#. §0: $b \\le a$
+#. §1: $b \\le c$
+#. §2: $c \\le a$
+#. §3: `trans c`
+#: Game.Levels.PosetWorld.Level03
+msgid "Now you need §0. You know §1 and §2. Time to use the transitivity tactic! Type §3."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "This introduction is shown before one enters level 1 of the demo world. Use markdown."
+#. §0: `le_antisymm`
+#. §1: `a ≤ b`
+#. §2: `b ≤ a`
+#. §3: `a = b`
+#: Game.Levels.PosetWorld.Level03
+msgid "§0 is the proof that if §1 and §2, then §3."
 msgstr ""
 
-#. §0: `«{h}»`
-#. §1: `«{g}»`
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You can either start using §0 or §1."
+#. §0: `a ⊓ b ≤ a ⊓ (b ⊔ c)`
+#. §1: `apply le_inf`
+#: Game.Levels.LatticeWorld.Level03
+msgid "Now we have two goals. Let's tackle §0. The right side is an infimum, so type §1."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "Demo World"
+#. §0: `P`
+#. §1: `exact h`
+#. §2: `h`
+#. §3: `P`
+#: Game.Levels.PosetWorld.Level01
+msgid "If the goal is a statement §0, then §1 will solve the goal if §2 is a proof of §3."
+msgstr ""
+
+#. §0: `a ≤ b ⊔ a`
+#. §1: `exact le_sup_right`
+#: Game.Levels.LatticeWorld.Level01
+msgid "Now you need §0. This matches the right-side rule of the supremum! Type §1."
+msgstr ""
+
+#. §0: `trans`
+#: Game.Levels.LatticeWorld.Level02
+msgid "Great! You used §0 elegantly to connect the infimum's property with your hypothesis."
+msgstr ""
+
+#. §0: `exact h`
+#: Game.Levels.LatticeWorld.Level02
+msgid "And close it with your hypothesis. Type §0."
+msgstr ""
+
+#. §0: `exact le_bot_iff`
+#: Game.Levels.CompleteLatticeWorld.Level02
+msgid "Mathlib provides this exact equivalence. Type §0."
+msgstr ""
+
+#. §0: `PartialOrder`
+#: Game.Levels.PosetWorld.Level03
+msgid "Fantastic! You successfully combined transitivity and antisymmetry to collapse a cycle into an equality.\n"
+"\n"
+"You have mastered the basics of Mathlib's §0."
+msgstr ""
+
+#. §0: `sup_inf_self`
+#. §1: `a`
+#. §2: `a ⊓ b`
+#. §3: `a`
+#. §4: `a ⊔ (a ⊓ b) = a`
+#. §5: `a ⊓ b`
+#. §6: `a`
+#. §7: `a`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 is one of the fundamental **Absorption Laws** in lattice theory.\n"
+"It states that taking the supremum of §1 and §2 simply returns §3.\n"
+"In symbols: §4.\n"
+"(Since §5 is already less than or equal to §6, adding it to §7 via supremum does nothing)."
+msgstr ""
+
+#. §0: `⊔`
+#. §1: `≤`
+#. §2: `apply sup_le`
+#: Game.Levels.LatticeWorld.Level03
+msgid "The left side is a supremum (§0). To show a supremum is §1 something, use §2."
+msgstr ""
+
+#. §0: `rw [← inf_assoc]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Shift the parentheses using associativity. Type §0."
+msgstr ""
+
+#: Game.Levels.PosetWorld
+msgid "Partial Orders"
+msgstr ""
+
+#. §0: `rw [sup_comm c b]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Just one swap left to match the goal! Type §0."
+msgstr ""
+
+#. §0: `bot_le`
+#. §1: `⊥`
+#. §2: `a`
+#. §3: `⊥ ≤ a`
+#: Game.Levels.CompleteLatticeWorld.Level01
+msgid "§0 states that the bottom element §1 (bot) is less than or equal to any other element §2 in a complete lattice.\n"
+"In symbols: §3.\n"
+"Because it is the absolute minimum, it is a lower bound for the entire universe."
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld.Level02
+msgid "Hitting Rock Bottom"
+msgstr ""
+
+#. §0: `X`
+#. §1: `≤`
+#. §2: `a ≤ a`
+#. §3: `a ≤ b → b ≤ a → a = b`
+#. §4: `a ≤ b → b ≤ c → a ≤ c`
+#. §5: `Set X`
+#. §6: `X`
+#. §7: `≤`
+#. §8: `⊆`
+#. §9: `inst†`
+#: Game.Levels.PosetWorld.Level01
+msgid "## Partial Order Definition\n"
+"\n"
+"A *partial order* (or a partially ordered type) is a type §0 equipped with a concept of §1 satisfying three fundamental axioms:\n"
+"1. **Reflexivity:** §2\n"
+"2. **Antisymmetry:** §3\n"
+"3. **Transitivity:** §4\n"
+"\n"
+"Examples of partial orders include the natural numbers, the real numbers, and the type §5 of subsets of a type §6 (where §7 means §8).\n"
+"\n"
+"Also, note that there is some strange §9 text in your objects. This simply means that your objects\n"
+"are instances of certain classes, for example that X is a partial order.\n"
+"\n"
+"## Goal for this level\n"
+"\n"
+"Let's prove the most basic fact: every element is less than or equal to itself."
+msgstr ""
+
+#: Game.Levels.LatticeWorld.Level04
+msgid "Sub-distributivity II"
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld.Level03
+msgid "Monotonicity of the Infinite"
+msgstr ""
+
+#. §0: `rw [sup_inf_self]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Now absorb! Type §0."
+msgstr ""
+
+#. §0: `rw`
+#. §1: `h`
+#. §2: `rw [h (a ⊓ b) a c]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Instead of messy inequalities, let's use algebra (§0). We'll transform the right side using our hypothesis §1. Type §2."
+msgstr ""
+
+#: Game.Levels.PosetWorld.Level02
+msgid "The Chain of Inequalities"
+msgstr ""
+
+#: Game.Levels.BossDistributiveWorld
+msgid "Choose this path if you want to solve the hardest logical puzzle in the game."
+msgstr ""
+
+#: Game.Levels.LatticeWorld.Level01
+msgid "Beautiful! You just proved that the supremum is commutative using the core axioms of a Lattice."
+msgstr ""
+
+#. §0: `a ⊓ (b ⊔ c) = (a ⊓ b) ⊔ (a ⊓ c)`
+#. §1: `a ⊔ (b ⊓ c) = (a ⊔ b) ⊓ (a ⊔ c)`
+#. §2: `constructor`
+#. §3: `↔`
+#. §4: `intro`
+#. §5: `∀ a b c, ...`
+#. §6: `A → B`
+#. §7: `intro`
+#. §8: `rw`
+#. §9: `rw [sup_comm a b]`
+#. §10: `a ⊔ b`
+#. §11: `b ⊔ a`
+#. §12: `rw [← sup_assoc]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "You have reached one of the final challenges.\n"
+"\n"
+"In a general lattice, neither §0 nor §1 holds.\n"
+"However, there is a beautiful and surprising mathematical truth: **one of these equalities holds if and only if the other one does!**\n"
+"\n"
+"This is a true boss fight. Grab a piece of paper, plan your strategy, and prove that these two distributive laws are perfectly equivalent.\n"
+"\n"
+"### New Tactics for the Boss\n"
+"* **§2**: Since the goal is an §3 (if and only if), this tactic splits the fight into two phases: Left-to-Right and Right-to-Left.\n"
+"* **§4**: When your goal starts with §5 or an implication §6, §7 pulls those variables and assumptions into your inventory so you can use them.\n"
+"* **§8 (rewrite)**: This tactic uses equations to substitute parts of your goal. For example, §9 replaces §10 with §11. To use an equation backward, use the left arrow inside the brackets: §12."
+msgstr ""
+
+#: Game.Levels.LatticeWorld.Level01
+msgid "Enter the Lattice (Supremum)"
+msgstr ""
+
+#. §0: `b ⊓ c ≤ a ⊔ b`
+#. §1: `b`
+#. §2: `trans b`
+#: Game.Levels.LatticeWorld.Level04
+msgid "You need §0. Step through §1. Type §2."
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld.Level01
+msgid "Simple, but foundational."
+msgstr ""
+
+#. §0: `exact hcd`
+#: Game.Levels.PosetWorld.Level02
+msgid "And finally, type §0."
+msgstr ""
+
+#. §0: `le_bot_iff`
+#. §1: `⊥`
+#. §2: `⊥`
+#. §3: `a ≤ ⊥ ↔ a = ⊥`
+#: Game.Levels.CompleteLatticeWorld.Level02
+msgid "§0 states that an element is less than or equal to the bottom element §1 if and only if it is exactly §2.\n"
+"In symbols: §3.\n"
+"Since nothing can be strictly smaller than the absolute minimum, anything claiming to be smaller must be the minimum itself."
+msgstr ""
+
+#: Game.Levels.PosetWorld.Level01
+msgid "Introduction to Partial Orders"
+msgstr ""
+
+#: Game.Levels.LatticeWorld.Level04
+msgid "Excellent! You have formally verified both sub-distributivity laws for general lattices.\n"
+"\n"
+"In some special lattices (like the subsets of a set), these inequalities actually become strict equalities. Those are called *Distributive Lattices*, but that's a story for another time!"
+msgstr ""
+
+#. §0: `b ≤ b ⊔ c`
+#. §1: `exact le_sup_left`
+#: Game.Levels.LatticeWorld.Level03
+msgid "Now §0. That's §1."
+msgstr ""
+
+#. §0: `a ⊓ b ≤ a`
+#. §1: `exact inf_le_left`
+#: Game.Levels.LatticeWorld.Level02
+msgid "First goal: §0. This is exactly the left rule of the infimum. Type §1."
+msgstr ""
+
+#. §0: `sSup_le_sSup`
+#. §1: `S`
+#. §2: `T`
+#. §3: `S ⊆ T`
+#. §4: `S`
+#. §5: `T`
+#. §6: `sSup S ≤ sSup T`
+#: Game.Levels.CompleteLatticeWorld.Level03
+msgid "§0 states that the set supremum operation is monotonic.\n"
+"If a set §1 is a subset of §2 (§3), then the supremum of §4 must be less than or equal to the supremum of §5.\n"
+"In symbols: §6.\n"
+"(Adding more elements to a set can only push its upper bound higher, never lower)."
+msgstr ""
+
+#: Game.Levels.PosetWorld.Level01
+msgid "Great start! You've used a native Mathlib theorem."
+msgstr ""
+
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "The Ultimate Puzzle"
+msgstr ""
+
+#. §0: `⊥`
+#. §1: `⊥`
+#: Game.Levels.CompleteLatticeWorld.Level02
+msgid "If §0 is the absolute bottom, what happens if something claims to be less than or equal to §1?"
+msgstr ""
+
+#. §0: `a ⊔ b ≤ b ⊔ a`
+#. §1: `apply sup_le`
+#: Game.Levels.LatticeWorld.Level01
+msgid "First, show §0. Since the left side is a supremum, use §1."
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld.Level03
+msgid "Flawless victory! You have grasped the mechanics of Complete Lattices and bounds of infinite sets.\n"
+"Your formalization journey is complete."
+msgstr ""
+
+#. §0: `S`
+#. §1: `sSup S`
+#. §2: `S`
+#. §3: `T`
+#. §4: `S`
+#. §5: `T`
+#: Game.Levels.CompleteLatticeWorld.Level03
+msgid "The supremum of a set §0 is denoted §1.\n"
+"Just like the regular supremum, the set supremum is monotonic. If a set §2 is a subset of §3, then the supremum of §4 must be less than or equal to the supremum of §5."
+msgstr ""
+
+#. §0: `sup_assoc`
+#. §1: `(a ⊔ b) ⊔ c = a ⊔ (b ⊔ c)`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 states that the supremum operation is associative:\n"
+"§1.\n"
+"You can shift the parentheses when taking the supremum of three or more elements."
+msgstr ""
+
+#: Game.Levels.LatticeWorld.Level03
+msgid "Masterfully done. You are weaving together Supremums and Infimums like a pro."
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld
+msgid "Choose this path to explore infinite sets and absolute bounds."
+msgstr ""
+
+#. §0: `exact hbc`
+#: Game.Levels.PosetWorld.Level02
+#: Game.Levels.PosetWorld.Level03
+#: Game.Levels.PosetWorld.Level03
+#: Game.Levels.LatticeWorld.Level01
+#: Game.Levels.LatticeWorld.Level01
+#: Game.Levels.LatticeWorld.Level02
+#: Game.Levels.LatticeWorld.Level03
+#: Game.Levels.LatticeWorld.Level03
+#: Game.Levels.LatticeWorld.Level03
+#: Game.Levels.LatticeWorld.Level03
+#: Game.Levels.LatticeWorld.Level03
+#: Game.Levels.LatticeWorld.Level04
+#: Game.Levels.LatticeWorld.Level04
+#: Game.Levels.LatticeWorld.Level04
+#: Game.Levels.LatticeWorld.Level04
+#: Game.Levels.LatticeWorld.Level04
+#: Game.Levels.LatticeWorld.Level04
+#: Game.Levels.BossDistributiveWorld.Level01
+#: Game.Levels.BossDistributiveWorld.Level01
+#: Game.Levels.BossDistributiveWorld.Level01
+#: Game.Levels.BossDistributiveWorld.Level01
+#: Game.Levels.BossDistributiveWorld.Level01
+#: Game.Levels.BossDistributiveWorld.Level01
+#: Game.Levels.BossDistributiveWorld.Level01
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Type §0."
+msgstr ""
+
+#. §0: `a ⊓ b ≤ c`
+#. §1: `a ⊓ b ≤ b`
+#. §2: `b ≤ c`
+#. §3: `h`
+#. §4: `trans b`
+#: Game.Levels.LatticeWorld.Level02
+msgid "Second goal: §0. You know §1 and §2 (which is §3). Let's chain them! Type §4."
+msgstr ""
+
+#. §0: `sup_comm`
+#. §1: `a ⊔ b = b ⊔ a`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 states that the supremum operation is commutative: §1.\n"
+"The order of the elements does not matter when finding their least upper bound."
+msgstr ""
+
+#. §0: `rw [h (a ⊔ b) a c]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "We do the exact same dance, perfectly mirrored. Type §0."
+msgstr ""
+
+#. §0: `intro h a b c`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Phase 2! The reverse direction. Type §0."
+msgstr ""
+
+#. §0: `rw`
+#. §1: `=`
+#. §2: `↔`
+#. §3: `thm : x = y`
+#. §4: `rw [thm]`
+#. §5: `x`
+#. §6: `y`
+#. §7: `y`
+#. §8: `x`
+#. §9: `rw [← thm]`
+#. §10: `←`
+#. §11: `\\l`
+#. §12: `\\leftarrow`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 (rewrite) changes a part of your goal using an equality (§1) or equivalence (§2).\n"
+"If you have a theorem §3, typing §4 replaces §5 with §6 in your goal.\n"
+"To replace §7 with §8 (rewriting right-to-left), use the left arrow: §9.\n"
+"(You can type §10 by typing §11 or §12).\n"
+"You can also rewrite using hypotheses from your context."
+msgstr ""
+
+#. §0: `constructor`
+#. §1: `↔`
+#. §2: `∧`
+#. §3: `A ↔ B`
+#. §4: `A → B`
+#. §5: `B → A`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 splits an equivalence (§1) or a conjunction (§2) into two separate goals.\n"
+"For §3, it gives you §4 and §5."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed! 🎉"
+msgstr ""
+
+#. §0: `a ⊓ b ≤ b ⊔ c`
+#. §1: `b`
+#. §2: `trans b`
+#: Game.Levels.LatticeWorld.Level03
+msgid "You need §0. Step through §1 using §2."
+msgstr ""
+
+#. §0: `exact hab`
+#: Game.Levels.PosetWorld.Level02
+msgid "Now the goals match your hypotheses perfectly. Type §0."
+msgstr ""
+
+#: Game.Levels.PosetWorld
+msgid "Welcome to the foundation of Order Theory.\n"
+"Here we will explore relations, inequalities, and bounds using Lean's Mathlib."
+msgstr ""
+
+#. §0: `a ⊓ c ≤ a ⊓ (b ⊔ c)`
+#. §1: `apply le_inf`
+#: Game.Levels.LatticeWorld.Level03
+msgid "Second half! §0. Type §1."
+msgstr ""
+
+#. §0: `apply le_inf`
+#: Game.Levels.LatticeWorld.Level04
+msgid "The right side is an infimum. Use §0."
+msgstr ""
+
+#. §0: `b ≤ b ⊔ a`
+#. §1: `exact le_sup_left`
+#: Game.Levels.LatticeWorld.Level01
+msgid "And for §0, use the left-side rule. Type §1."
+msgstr ""
+
+#: Game.Levels.LatticeWorld.Level03
+msgid "Sub-distributivity I"
+msgstr ""
+
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Incredible! You have conquered the distributive equivalence theorem. You are a true master of Lattices."
+msgstr ""
+
+#. §0: `p * (q + r) = p * q + p * r`
+#. §1: `A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)`
+#. §2: `⊓`
+#. §3: `⊔`
+#. §4: `(a ⊓ b) ⊔ (a ⊓ c) ≤ a ⊓ (b ⊔ c)`
+#: Game.Levels.LatticeWorld.Level03
+msgid "In normal arithmetic, multiplication distributes over addition: §0.\n"
+"In set theory, intersection distributes over union: §1.\n"
+"\n"
+"However, in a general Lattice, §2 DOES NOT always distribute over §3. We only get an inequality, known as **sub-distributivity**.\n"
+"\n"
+"Let's prove the first half: §4.\n"
+"*Tip: Look at the outermost operator of your goal to decide your first tactic.*"
+msgstr ""
+
+#. §0: `a ⊔ (b ⊓ c) ≤ a ⊔ c`
+#. §1: `apply sup_le`
+#: Game.Levels.LatticeWorld.Level04
+msgid "Goal 2: §0. Type §1."
+msgstr ""
+
+#. §0: `b ⊔ a ≤ a ⊔ b`
+#. §1: `apply sup_le`
+#: Game.Levels.LatticeWorld.Level01
+msgid "Halfway there! Now prove §0. Use §1 again."
+msgstr ""
+
+#: Game.Levels.PosetWorld.Level03
+msgid "The Cycle (Antisymmetry)"
+msgstr ""
+
+#. §0: `trans`
+#: Game.Levels.PosetWorld.Level02
+msgid "Excellent! The §0 tactic is a lifesaver when dealing with chains of inequalities."
+msgstr ""
+
+#. §0: `inf_sup_self`
+#. §1: `a`
+#. §2: `a ⊔ b`
+#. §3: `a`
+#. §4: `a ⊓ (a ⊔ b) = a`
+#. §5: `a ⊔ b`
+#. §6: `a`
+#. §7: `a`
+#. §8: `a`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 is the dual **Absorption Law**.\n"
+"It states that taking the infimum of §1 and §2 simply returns §3.\n"
+"In symbols: §4.\n"
+"(Since §5 is already greater than or equal to §6, intersecting it with §7 via infimum just leaves §8)."
+msgstr ""
+
+#. §0: `c`
+#. §1: `trans c`
+#: Game.Levels.LatticeWorld.Level03
+#: Game.Levels.LatticeWorld.Level04
+msgid "Step through §0. Type §1."
+msgstr ""
+
+#. §0: `sup_le`
+#. §1: `a ≤ c`
+#. §2: `b ≤ c`
+#. §3: `a ⊔ b ≤ c`
+#: Game.Levels.LatticeWorld.Level01
+#: Game.Levels.LatticeWorld.Level02
+msgid "§0 says that if §1 and §2, then §3."
+msgstr ""
+
+#. §0: `a ≤ c`
+#. §1: `trans`
+#. §2: `b`
+#. §3: `trans b`
+#: Game.Levels.PosetWorld.Level02
+msgid "Lean split the goal! Now you need to prove §0. You can use §1 again to step through §2. Type §3."
+msgstr ""
+
+#. §0: `apply le_inf`
+#: Game.Levels.LatticeWorld.Level02
+msgid "You need to show that something is less than or equal to an infimum. Use §0."
 msgstr ""
 
 #: Game
-msgid "Game Template"
+msgid "Welcome to the Orderings & Lattices Game!\n"
+"This interactive experience bridges the gap between basic logic and abstract algebra."
+msgstr ""
+
+#. §0: `a={1}`
+#. §1: `b={2}`
+#. §2: `c={1,2,3}`
+#. §3: `d={1,2,4}`
+#. §4: `c`
+#. §5: `d`
+#. §6: `{a, b}`
+#. §7: `c ≰ d`
+#. §8: `d ≰ c`
+#. §9: `⊔`
+#. §10: `⊓`
+#. §11: `a`
+#. §12: `b`
+#. §13: `le_sup_left`
+#. §14: `a ≤ a ⊔ b`
+#. §15: `le_sup_right`
+#. §16: `b ≤ a ⊔ b`
+#. §17: `sup_le`
+#. §18: `a ≤ c`
+#. §19: `b ≤ c`
+#. §20: `a ⊔ b ≤ c`
+#: Game.Levels.LatticeWorld.Level01
+msgid "## Welcome to Lattices\n"
+"A partial order can be very general. Consider a partial order of subsets of natural numbers containing only four elements:\n"
+"§0, §1, §2, and §3.\n"
+"Both §4 and §5 are upper bounds for §6, but neither is the *least* upper bound because §7 and §8.\n"
+"\n"
+"A **Lattice** is a partial order where *any* two elements are guaranteed to have a **least upper bound** (Supremum, denoted §9) and a **greatest lower bound** (Infimum, denoted §10).\n"
+"\n"
+"Here is the Mathlib API for the Supremum of §11 and §12:\n"
+"* §13: §14\n"
+"* §15: §16\n"
+"* §17: If §18 and §19, then §20\n"
+"\n"
+"Let's prove that the supremum operation is commutative."
+msgstr ""
+
+#. §0: `le_sup_left`
+#. §1: `a ≤ a ⊔ b`
+#: Game.Levels.LatticeWorld.Level01
+#: Game.Levels.LatticeWorld.Level01
+#: Game.Levels.LatticeWorld.Level02
+#: Game.Levels.LatticeWorld.Level02
+msgid "§0 says that §1."
+msgstr ""
+
+#. §0: `intro h a b c`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Phase 1: Assume the first law and prove the second. Type §0 to bring the hypothesis and variables into your context."
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld.Level01
+msgid "The Absolute Bottom"
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld
+msgid "Complete Lattices"
+msgstr ""
+
+#: Game
+msgid "Built with Lean 4 and Mathlib."
+msgstr ""
+
+#. §0: `apply thm`
+#. §1: `A → B`
+#. §2: `B`
+#. §3: `apply thm`
+#. §4: `A`
+#: Game.Levels.PosetWorld.Level03
+msgid "§0 changes the current goal by applying a theorem backwards.\n"
+"If the theorem says §1 and your goal is §2, §3 changes your goal to §4."
+msgstr ""
+
+#. §0: `h`
+#. §1: `rw [sup_comm (a ⊓ b) c]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Let's prepare the second bracket to use §0 again. Type §1."
+msgstr ""
+
+#. §0: `exact sSup_le_sSup h`
+#: Game.Levels.CompleteLatticeWorld.Level03
+msgid "Apply the Mathlib theorem for set supremum monotonicity. Type §0."
+msgstr ""
+
+#: Game.Levels.LatticeWorld.Level02
+msgid "Going Down (The Infimum)"
+msgstr ""
+
+#: Game.Levels.CompleteLatticeWorld.Level02
+msgid "Exactly! Nothing can be strictly smaller than the bottom element."
+msgstr ""
+
+#. §0: $a \\le b$
+#. §1: $b \\le c$
+#. §2: $c \\le a$
+#. §3: $a = b$
+#: Game.Levels.PosetWorld.Level03
+msgid "Let's combine the axioms. What happens if you have a cycle of inequalities?\n"
+"Suppose §0, §1, and §2. Can you prove that §3?\n"
+"\n"
+"To prove equality in a partial order, you must use Antisymmetry, and then use your new knowledge of Transitivity to fill in the missing link."
+msgstr ""
+
+#. §0: $a = b$
+#. §1: $a \\le b$
+#. §2: $b \\le a$
+#. §3: `apply le_antisymm`
+#: Game.Levels.PosetWorld.Level03
+msgid "To prove §0, you need to show §1 and §2. Type §3."
+msgstr ""
+
+#. §0: `a ⊔ (b ⊓ c) ≤ (a ⊔ b) ⊓ (a ⊔ c)`
+#. §1: `⊓`
+#: Game.Levels.LatticeWorld.Level04
+msgid "Let's prove the dual sub-distributivity law: §0.\n"
+"\n"
+"Notice that the outermost operator on the right side is an infimum (§1). That should tell you exactly how to start!"
+msgstr ""
+
+#. §0: `constructor`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Start by splitting the equivalence into two implications. Type §0."
+msgstr ""
+
+#: Game.Levels.LatticeWorld
+msgid "Lattice Theory"
+msgstr ""
+
+#. §0: `h`
+#. §1: `rw [h c a b]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Now we can apply §0 on the inside. Type §1."
+msgstr ""
+
+#. §0: `exact le_refl a`
+#: Game.Levels.PosetWorld.Level01
+msgid "Use the reflexivity axiom directly. Type §0."
+msgstr ""
+
+#. §0: `a ⊔ a ⊓ b = a`
+#. §1: `rw [sup_comm (a ⊓ b) a]`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "Let's apply the absorption law §0 to the first bracket. First, swap the terms. Type §1."
+msgstr ""
+
+#. §0: `inf_comm`
+#. §1: `a ⊓ b = b ⊓ a`
+#: Game.Levels.BossDistributiveWorld.Level01
+msgid "§0 states that the infimum operation is commutative: §1.\n"
+"The order of the elements does not matter when finding their greatest lower bound."
+msgstr ""
+
+#. §0: `le_trans`
+#. §1: `a ≤ b`
+#. §2: `b ≤ c`
+#. §3: `a ≤ c`
+#: Game.Levels.PosetWorld.Level02
+msgid "§0 states that if §1 and §2, then §3."
 msgstr ""
